@@ -3,7 +3,18 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import threading
 import os
+import sys
+from pydub import AudioSegment
 import yt_dlp
+
+# --- ffmpegパスの設定 ---
+if getattr(sys, 'frozen', False):  # exe化されている場合
+    ffmpeg_path = os.path.join(sys._MEIPASS, "ffmpeg.exe")
+else:
+    ffmpeg_path = "ffmpeg"  # 通常は PATH から呼ばれる
+
+# pydub に ffmpeg の場所を教える
+AudioSegment.converter = ffmpeg_path
 
 class YouTubeMP3Downloader:
     def __init__(self, root):
