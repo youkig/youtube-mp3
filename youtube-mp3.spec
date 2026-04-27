@@ -4,9 +4,9 @@
 a = Analysis(
     ['youtube-mp3.py'],
     pathex=[],
-    binaries=[('ffmpeg/bin/ffmpeg.exe', '.')],
+    binaries=[],
     datas=[],
-    hiddenimports=['audioop'],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
